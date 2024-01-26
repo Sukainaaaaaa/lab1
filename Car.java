@@ -2,7 +2,7 @@ import java.awt.*;
 
 import static java.lang.System.out;
 
-public class Car implements Movable { //
+public abstract class Car implements Movable { //
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
@@ -56,11 +56,11 @@ public class Car implements Movable { //
         currentSpeed = 0;
     }
 
-    protected double currentxpos() {
+    protected double currentxPos() {
         return this.px;
     }
 
-    protected double currentypos() {
+    protected double currentyPos() {
         return this.py;
     }
 
@@ -68,17 +68,11 @@ public class Car implements Movable { //
         return this.d;
     }
 
-    public double speedFactor() {
-        return enginePower * 0.01;
-    }
+    public abstract double speedFactor();
 
-    public void incrementSpeed(double amount) {
-        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
-    }
+    public abstract void incrementSpeed(double amount);
 
-    public void decrementSpeed(double amount) {
-        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
-    }
+    public abstract void decrementSpeed(double amount);
 
     public void gas(double amount) {
         if (amount < 0 || amount > 1) {
@@ -97,24 +91,24 @@ public class Car implements Movable { //
     public void move() {
         switch (d) {
             case S:
-                py = currentypos() - currentSpeed;
+                py = currentyPos() - currentSpeed;
                 break;
 
             case W:
-                px = currentxpos() - currentSpeed;
+                px = currentxPos() - currentSpeed;
                 break;
 
             case N:
-                py = currentypos() + currentSpeed;
+                py = currentyPos() + currentSpeed;
                 break;
 
             case E:
-                px = currentypos() + currentSpeed;
+                px = currentyPos() + currentSpeed;
                 break;
 
             default:
-                px = currentxpos();
-                py = currentypos();
+                px = currentxPos();
+                py = currentyPos();
         }
     }
 
