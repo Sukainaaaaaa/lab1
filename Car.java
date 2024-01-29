@@ -1,7 +1,5 @@
 import java.awt.*;
 
-import static java.lang.System.out;
-
 public abstract class Car implements Movable { //
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
