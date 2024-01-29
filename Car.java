@@ -16,62 +16,38 @@ public abstract class Car implements Movable { //
         N, E, W, S
     }
 
-
-    public Car() { //Could also make a constructor with parameters.
-        this.color = color;
-        this.currentSpeed = currentSpeed;
-        this.modelName = modelName;
-        this.nrDoors = nrDoors;
-        this.enginePower = enginePower;
-        this.d = Direction.N;
-        this.px = 0;
-        this.py = 0;
-    }
-
     protected int getNrDoors() {
         return nrDoors;
     }
-
     protected double getEnginePower() {
         return enginePower;
     }
-
     protected double getCurrentSpeed() {
         return currentSpeed;
     }
-
     protected Color getColor() {
         return color;
     }
-
     protected void setColor(Color clr) {
         color = clr;
     }
-
     protected void startEngine() {
         currentSpeed = 0.1;
     }
-
     protected void stopEngine() {
         currentSpeed = 0;
     }
-
     protected double currentxPos() {
         return this.px;
     }
-
     protected double currentyPos() {
         return this.py;
     }
-
     protected Direction getDirection() {
         return this.d;
     }
-
     public abstract double speedFactor();
-
     public abstract void incrementSpeed(double amount);
-
     public abstract void decrementSpeed(double amount);
 
     public void gas(double amount) {
