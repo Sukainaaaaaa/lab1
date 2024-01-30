@@ -8,10 +8,12 @@ import static org.junit.Assert.assertEquals;
 public class CarTest extends Car {
     Volvo240 volvo_test;
     Saab95 saab_test;
+    Scania scania_test;
     @Before
     public void SetUp(){
         volvo_test = new Volvo240();
         saab_test = new Saab95();
+        scania_test = new Scania();
     }
 
     @Test
@@ -133,6 +135,27 @@ public class CarTest extends Car {
         saab_test.gas(0.3);
         double speedWithoutTurbo = saab_test.getCurrentSpeed();
         assert speedWithTurbo > speedWithoutTurbo;
+    }
+
+    @Test
+    public void testRaisePlatform(){
+        scania_test.raisePlatform(30);
+        assertEquals(30, scania_test.getAngle(), 0.001);
+    }
+
+    @Test
+    public void testLowerPlatform(){
+        scania_test.setAngle(45);
+        scania_test.lowerPlatform(20);
+        assertEquals(25, scania_test.getAngle(), 0.001);
+    }
+
+    @Test
+    public void testIncrementSpeedScania(){
+        scania_test.currentSpeed = 40;
+        scania_test.setAngle(25);
+        scania_test.incrementSpeed(30);
+        assertEquals(40, scania_test.getCurrentSpeed(), 0.001);
     }
 
     @Override
