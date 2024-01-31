@@ -21,7 +21,7 @@ public class Scania extends Car {
     }
 
     protected void raisePlatform(double amount) {
-        if (this.angle >= 70 || currentSpeed != 0) {
+        if (this.angle >= 70 || this.currentSpeed != 0) {
             throw new IllegalArgumentException("Cannot raise platform");
         }
         if ((this.angle + amount) <= 70 && (this.angle >= 0)) {
@@ -30,7 +30,7 @@ public class Scania extends Car {
     }
 
     protected void lowerPlatform(double amount) {
-        if (this.angle <= 0 || currentSpeed != 0) {
+        if (this.angle <= 0 || this.currentSpeed != 0) {
             throw new IllegalArgumentException("Cannot lower platform");
         }
         if ((this.angle - amount) >= 0 && (this.angle <= 70)) {

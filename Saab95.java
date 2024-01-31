@@ -9,6 +9,8 @@ public class Saab95 extends Car{
         enginePower = 125;
 	    turboOn = false;
         modelName = "Saab95";
+        length = 5000;
+        width = 1900;
         stopEngine();
     }
 
@@ -35,5 +37,4 @@ public class Saab95 extends Car{
     public void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
-
 }

@@ -9,6 +9,8 @@ public abstract class Car implements Movable { //
     protected double px;
     protected double py;
     protected Direction d;
+    protected int length; //in mm
+    protected int width; //in mm
 
     protected enum Direction {
         N, E, W, S
@@ -41,6 +43,8 @@ public abstract class Car implements Movable { //
     protected double currentyPos() {
         return this.py;
     }
+    protected int getLength(){return this.length;}
+    protected int getWidth(){return this.width;}
     protected Direction getDirection() {
         return this.d;
     }
