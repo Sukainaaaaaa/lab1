@@ -5,17 +5,22 @@ import java.awt.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class CarTest extends Car {
+public class VehicleTest {
     Volvo240 volvo_test;
+    Volvo240 volvo_test2;
     Saab95 saab_test;
     Scania scania_test;
     Transporter transporter_test;
+    Garage<Volvo240> volvo240Garage;
+
 
     @Before
     public void SetUp() {
+        volvo240Garage = new Garage<>("VolvoG", 5);
         volvo_test = new Volvo240();
         saab_test = new Saab95();
         scania_test = new Scania();
+        volvo_test2 = new Volvo240();
         transporter_test = new Transporter();
     }
 
@@ -37,7 +42,7 @@ public class CarTest extends Car {
     public void testMove() {
         volvo_test.px = 3;
         volvo_test.currentSpeed = 10;
-        volvo_test.d = Car.Direction.W;
+        volvo_test.d = Vehicle.Direction.W;
         double result = volvo_test.px - volvo_test.currentSpeed;
         volvo_test.move();
 
@@ -48,7 +53,7 @@ public class CarTest extends Car {
     public void testMove2() {
         saab_test.py = 4;
         saab_test.currentSpeed = 20;
-        saab_test.d = Car.Direction.S;
+        saab_test.d = Vehicle.Direction.S;
         double result = saab_test.py - saab_test.currentSpeed;
         saab_test.move();
 
@@ -72,18 +77,18 @@ public class CarTest extends Car {
 
     @Test
     public void testTurnLeft() {
-        volvo_test.d = Direction.N;
+        volvo_test.d = Vehicle.Direction.N;
         volvo_test.turnLeft();
 
-        assertEquals(Direction.W, volvo_test.getDirection());
+        assertEquals(Vehicle.Direction.W, volvo_test.getDirection());
     }
 
     @Test
     public void testTurnRight() {
-        saab_test.d = Direction.N;
+        saab_test.d = Vehicle.Direction.N;
         saab_test.turnRight();
 
-        assertEquals(Direction.E, saab_test.getDirection());
+        assertEquals(Vehicle.Direction.E, saab_test.getDirection());
     }
 
     @Test
@@ -181,38 +186,39 @@ public class CarTest extends Car {
     }
 
     @Test
-    public void testLoadCar() {
+    public void testLoadVehicle() {
         saab_test.px = 2;
         saab_test.py = 3;
-        transporter_test.loadCar(saab_test, transporter_test);
+        transporter_test.loadVehicle(saab_test, transporter_test);
 
-        assert saab_test == transporter_test.carStack.peek();
+        assert saab_test == transporter_test.vehicleStack.peek();
     }
 
     @Test
-    public void testUnloadCar() {
+    public void testUnloadVehicle() {
         saab_test.px = 2;
         saab_test.py = 3;
         volvo_test.px = 4;
         volvo_test.py = 1;
-        transporter_test.loadCar(saab_test, transporter_test);
-        transporter_test.loadCar(volvo_test, transporter_test);
-        int stackSize = transporter_test.carStack.size();
-        transporter_test.unloadCar(transporter_test);
+        transporter_test.loadVehicle(saab_test, transporter_test);
+        transporter_test.loadVehicle(volvo_test, transporter_test);
+        int stackSize = transporter_test.vehicleStack.size();
+        transporter_test.unloadVehicle(transporter_test);
 
-        assert stackSize > transporter_test.carStack.size();
+        assert stackSize > transporter_test.vehicleStack.size();
     }
 
-    @Override
-    public double speedFactor() {
-        return 0;
+    @Test
+    public void testAdmitVehicle(){
+        volvo240Garage.admitVehicle(volvo_test);
+        assert 1 == volvo240Garage.vehicles.size();
+    }
+    @Test
+    public void testPickUpVehicle() {
+        volvo240Garage.admitVehicle(volvo_test);
+        volvo240Garage.admitVehicle(volvo_test2);
+        volvo240Garage.pickUpVehicle(volvo_test2);
+        assert !volvo240Garage.vehicles.contains(volvo_test2);
     }
 
-    @Override
-    public void decrementSpeed(double amount) {
-    }
-
-    @Override
-    public void incrementSpeed(double amount) {
-    }
 }

@@ -1,26 +1,23 @@
 import java.awt.*;
 
-public class Scania extends Car {
+public class Scania extends Truck {
     private double angle;
 
     public Scania() {
+        super(Color.white,"Scania", 400,2,12000,2600);
         angle = 0;
-        nrDoors = 2;
-        color = Color.white;
-        enginePower = 400;
-        modelName = "Scania";
         stopEngine();
     }
 
     protected double getAngle() {
         return this.angle;
     }
-
     protected double setAngle(double angle) {
         return this.angle = angle;
     }
 
-    protected void raisePlatform(double amount) {
+    @Override
+    public void raisePlatform(double amount) {
         if (this.angle >= 70 || this.currentSpeed != 0) {
             throw new IllegalArgumentException("Cannot raise platform");
         }
@@ -29,7 +26,8 @@ public class Scania extends Car {
         }
     }
 
-    protected void lowerPlatform(double amount) {
+    @Override
+    public void lowerPlatform(double amount) {
         if (this.angle <= 0 || this.currentSpeed != 0) {
             throw new IllegalArgumentException("Cannot lower platform");
         }
