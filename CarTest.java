@@ -2,20 +2,25 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.awt.*;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class CarTest extends Car {
     Volvo240 volvo_test;
+    Volvo240 volvo_test2;
     Saab95 saab_test;
     Scania scania_test;
     Transporter transporter_test;
+    Garage<Volvo240> volvo240Garage;
 
     @Before
     public void SetUp() {
+        volvo240Garage = new Garage<>("VolvoG", 5);
         volvo_test = new Volvo240();
         saab_test = new Saab95();
         scania_test = new Scania();
+        volvo_test2 = new Volvo240();
         transporter_test = new Transporter();
     }
 
@@ -201,6 +206,19 @@ public class CarTest extends Car {
         transporter_test.unloadCar(transporter_test);
 
         assert stackSize > transporter_test.carStack.size();
+    }
+
+    @Test
+    public void testAdmitCar(){
+        volvo240Garage.admitCar(volvo_test);
+        assert 1 == volvo240Garage.cars.size();
+    }
+    @Test
+    public void testPickUpCar() {
+        volvo240Garage.admitCar(volvo_test);
+        volvo240Garage.admitCar(volvo_test2);
+        volvo240Garage.pickUpCar(volvo_test2);
+        assert !volvo240Garage.cars.contains(volvo_test2);
     }
 
     @Override

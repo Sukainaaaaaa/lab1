@@ -6,7 +6,7 @@ public class Scania extends Car {
     public Scania() {
         angle = 0;
         nrDoors = 2;
-        color = Color.white;
+        setColor(Color.white);
         enginePower = 400;
         modelName = "Scania";
         stopEngine();

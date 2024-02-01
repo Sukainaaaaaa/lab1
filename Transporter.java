@@ -15,7 +15,7 @@ public class Transporter extends Scania {
         maxCapacity = 6;
         carStack = new Stack<>();
         nrDoors = 2;
-        color = Color.white;
+        setColor(Color.white);
         enginePower = 400;
         modelName = "Transporter02";
         stopEngine();
@@ -25,14 +25,14 @@ public class Transporter extends Scania {
         return this.platform;
     }
 
-    protected void raisePlatform() {
+    private void raisePlatform() {
         if (this.currentSpeed != 0) {
             throw new IllegalArgumentException("Transporter must be stationary");
         }
         platform = true;
     }
 
-    protected void lowerPlatform() {
+    private void lowerPlatform() {
         if (this.currentSpeed != 0) {
             throw new IllegalArgumentException("Transporter must be stationary");
         }
