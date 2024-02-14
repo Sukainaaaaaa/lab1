@@ -57,10 +57,11 @@ public class Transporter extends Truck{
         return car.getLength() <= 5200 && car.getWidth() <= 2600;
     }
 
+
     public void loadVehicle(Vehicle car, Transporter transporter) {
         transporter.lowerPlatform(0); //asserts currentSpeed = 0
         if (!transporter.getPlatform() && isWithinRange(car)
-                && vehicleStack.size() < transporter.maxCapacity && validCarSize(car)) {
+                && vehicleStack.size() < transporter.maxCapacity && validCarSize(car) && car.isLoadable()) {
             vehicleStack.push(car);
             car.py = transporter.currentyPos();
             car.px = transporter.currentxPos();
@@ -96,4 +97,8 @@ public class Transporter extends Truck{
         }
     }
 
+    @Override
+    public boolean isLoadable() {
+        return false;
+    }
 }

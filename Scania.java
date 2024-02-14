@@ -54,4 +54,9 @@ public class Scania extends Truck {
             currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
         }
     }
+
+    @Override
+    public boolean isLoadable() {
+        return false;
+    }
 }
