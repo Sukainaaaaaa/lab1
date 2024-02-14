@@ -57,7 +57,6 @@ public class Transporter extends Truck{
         return car.getLength() <= 5200 && car.getWidth() <= 2600;
     }
 
-
     public void loadVehicle(Vehicle car, Transporter transporter) {
         transporter.lowerPlatform(0); //asserts currentSpeed = 0
         if (!transporter.getPlatform() && isWithinRange(car)
@@ -78,6 +77,34 @@ public class Transporter extends Truck{
         }
     }
 
+    @Override
+    public void move() {
+        switch (d) {
+            case S:
+                py = currentyPos() - currentSpeed;
+                break;
+
+            case W:
+                px = currentxPos() - currentSpeed;
+                break;
+
+            case N:
+                py = currentyPos() + currentSpeed;
+                break;
+
+            case E:
+                px = currentyPos() + currentSpeed;
+                break;
+
+            default:
+                px = currentxPos();
+                py = currentyPos();
+        }
+        for (Vehicle v : vehicleStack){
+            v.px = px;
+            v.py = py;
+        }
+    }
     @Override
     public double speedFactor() {
         return enginePower * 0.01;

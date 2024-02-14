@@ -61,6 +61,7 @@ public abstract class Vehicle implements Movable, Loadable{
     public abstract void incrementSpeed(double amount);
     public abstract void decrementSpeed(double amount);
 
+
     public void gas(double amount) {
         if (amount < 0 || amount > 1) {
             throw new IllegalArgumentException("Gas out of bounds");

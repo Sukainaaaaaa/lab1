@@ -3,7 +3,8 @@ import org.junit.Test;
 
 import java.awt.*;
 
-import static org.junit.Assert.assertEquals;
+import static org.
+        junit.Assert.assertEquals;
 
 public class VehicleTest {
     Volvo240 volvo_test;
