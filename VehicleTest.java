@@ -108,6 +108,7 @@ public class VehicleTest {
     @Test
     public void testGas() {
         double speed = volvo_test.getCurrentSpeed();
+        volvo_test.startEngine();
         volvo_test.gas(1);
 
         assert speed < volvo_test.getCurrentSpeed();
@@ -163,7 +164,7 @@ public class VehicleTest {
 
     @Test
     public void testRaisePlatform() {
-        scania_test.raisePlatform(30);
+        scania_test.raiseScania(30);
 
         assertEquals(30, scania_test.getAngle(), 0.001);
     }
@@ -171,7 +172,7 @@ public class VehicleTest {
     @Test
     public void testLowerPlatform() {
         scania_test.setAngle(45);
-        scania_test.lowerPlatform(20);
+        scania_test.lowerScania(20);
 
         assertEquals(25, scania_test.getAngle(), 0.001);
     }

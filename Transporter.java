@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class Transporter extends Truck{
     Random rand = new Random();
+    private PlatformTransporter platformtrans;
     private boolean platform; //false = platform down
     private int maxCapacity;
     private final double distance = 5; // from transporter to car
@@ -15,31 +16,20 @@ public class Transporter extends Truck{
         platform = false;
         maxCapacity = 6;
         vehicleStack = new Stack<>();
+        platformtrans = new PlatformTransporter();
         stopEngine();
+    }
+
+    protected void lowerTrans(Transporter trans){
+        platformtrans.lower(trans);
+    }
+
+    protected void raiseTrans(Transporter trans){
+        platformtrans.raise(trans);
     }
 
     protected boolean getPlatform() {
         return this.platform;
-    }
-
-    @Override
-    public void raisePlatform(double amount) {
-        if (this.currentSpeed != 0) {
-            throw new IllegalArgumentException("Transporter must be stationary");
-        }
-        if (amount == 1) {
-            platform = true;
-        }
-    }
-
-    @Override
-    public void lowerPlatform(double amount) {
-        if (this.currentSpeed != 0) {
-            throw new IllegalArgumentException("Transporter must be stationary");
-        }
-        if (amount == 0) {
-            platform = false;
-        }
     }
 
     private double getMagnitude(double x, double y) {
@@ -58,18 +48,18 @@ public class Transporter extends Truck{
     }
 
     public void loadVehicle(Vehicle car, Transporter transporter) {
-        transporter.lowerPlatform(0); //asserts currentSpeed = 0
+        transporter.lowerTrans(transporter); //asserts currentSpeed = 0
         if (!transporter.getPlatform() && isWithinRange(car)
-                && vehicleStack.size() < transporter.maxCapacity && validCarSize(car)) {
+                && vehicleStack.size() < transporter.maxCapacity && validCarSize(car) && car.isLoadable()) {
             vehicleStack.push(car);
             car.py = transporter.currentyPos();
             car.px = transporter.currentxPos();
         }
-        transporter.raisePlatform(1);
+        transporter.raiseTrans(transporter);
     }
 
     public void unloadVehicle(Transporter transporter) {
-        transporter.lowerPlatform(0);
+        transporter.lowerTrans(transporter);
         if (!transporter.getPlatform()) {
             Vehicle car = vehicleStack.pop();
             car.px = Math.min(rand.nextDouble(), distance);
@@ -84,16 +74,26 @@ public class Transporter extends Truck{
 
     @Override
     public void incrementSpeed(double amount) {
-        if (this.platform == true) {
+        if (this.platform) {
             currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
         }
     }
 
     @Override
     public void decrementSpeed(double amount) {
-        if (this.platform == true) {
+        if (this.platform) {
             currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
         }
     }
 
+    @Override
+    public boolean isLoadable(){
+        return false;
+    }
+
+    @Override
+    public boolean hasTurbo() { return false;}
+
+    @Override
+    public boolean hasPlatform() { return true;}
 }

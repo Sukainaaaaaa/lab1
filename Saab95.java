@@ -32,4 +32,14 @@ public class Saab95 extends Vehicle{
     public void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
+
+    @Override
+    public boolean isLoadable(){
+        return true;
+    }
+
+    @Override
+    public boolean hasTurbo() { return true;}
+    @Override
+    public boolean hasPlatform() { return false;}
 }

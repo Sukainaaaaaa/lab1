@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Vehicle implements Movable{
+public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
@@ -8,7 +8,7 @@ public abstract class Vehicle implements Movable{
     protected String modelName; // The car model name
     protected double px;
     protected double py;
-    protected Direction d;
+    protected Direction d = Direction.E;
     protected int length; //in mm
     protected int width; //in mm6
 
@@ -43,9 +43,7 @@ public abstract class Vehicle implements Movable{
     protected void startEngine() {
         currentSpeed = 0.1;
     }
-    protected void stopEngine() {
-        currentSpeed = 0;
-    }
+    protected void stopEngine() {currentSpeed = 0;}
     protected double currentxPos() {
         return this.px;
     }
@@ -65,7 +63,7 @@ public abstract class Vehicle implements Movable{
         if (amount < 0 || amount > 1) {
             throw new IllegalArgumentException("Gas out of bounds");
         }
-        incrementSpeed(amount);
+        if(currentSpeed > 0){ incrementSpeed(amount);}
     }
 
     public void brake(double amount) {
@@ -78,25 +76,51 @@ public abstract class Vehicle implements Movable{
     public void move() {
         switch (d) {
             case S:
-                py = currentyPos() - currentSpeed;
+                py -= currentSpeed;
                 break;
 
             case W:
-                px = currentxPos() - currentSpeed;
+                px -= currentSpeed;
                 break;
 
             case N:
-                py = currentyPos() + currentSpeed;
+                py += currentSpeed;
                 break;
 
             case E:
-                px = currentyPos() + currentSpeed;
+                px += currentSpeed;
                 break;
 
-            default:
-                px = currentxPos();
-                py = currentyPos();
         }
+        bounds();
+
+    }
+
+    public void bounds(){
+        if(CarView.X-110 <= currentxPos() && this.d == Direction.E ){
+            this.currentSpeed = 0;
+            this.d = Direction.W;
+            startEngine();
+        }
+
+        if (0 > currentxPos() && this.d == Direction.W ) {
+            this.currentSpeed = 0;
+            this.d = Direction.E;
+            startEngine();
+        }
+
+        if(CarView.Y-70 <= currentxPos() && this.d == Direction.S ){
+            this.currentSpeed = 0;
+            this.d = Direction.N;
+            startEngine();
+        }
+
+        if(0 > currentxPos() && this.d == Direction.N ){
+            this.currentSpeed = 0;
+            this.d = Direction.S;
+            startEngine();
+        }
+
     }
 
     public void turnLeft() {
