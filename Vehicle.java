@@ -41,7 +41,7 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
         color = clr;
     }
     protected void startEngine() {
-        currentSpeed = 0.1;
+        currentSpeed = 0.1 * speedFactor();
     }
     protected void stopEngine() {currentSpeed = 0;}
     protected double currentxPos() {
