@@ -1,4 +1,7 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
     protected int nrDoors; // Number of doors on the car
@@ -162,5 +165,7 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
                 break;
         }
     }
+
+
 
 }

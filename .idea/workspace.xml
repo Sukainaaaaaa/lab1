@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba0dac04-22c4-4f9b-aa18-5fbdcd121ef2" name="Changes" comment="lab3 final" />
+    <list default="true" id="ba0dac04-22c4-4f9b-aa18-5fbdcd121ef2" name="Changes" comment="lab3 final">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UML + Refactoring/Refactoring.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UML + Refactoring/UML1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UML + Refactoring/UML2.1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Garage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Garage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Loadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loadable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Movable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Platform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlatformScania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlatformScania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlatformTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlatformTransporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Saab95.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Turbo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Turbo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VehicleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VehicleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Volvo240.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1.iml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,15 +77,25 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/IdeaProjects/lab1",
+    "last_opened_file_path": "C:/Users/User/Documents/TDA553-DIT954 java-design/lab1/UML + Refactoring",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\TDA553-DIT954 java-design\lab1\UML + Refactoring" />
       <recent name="C:\Users\User\IdeaProjects\lab1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\TDA553-DIT954 java-design\lab1" />
+      <recent name="C:\Users\User\Documents\TDA553-DIT954 java-design\lab1\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -246,11 +283,6 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/CarController.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
