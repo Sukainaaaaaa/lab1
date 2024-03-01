@@ -100,7 +100,7 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
     }
 
     public void bounds(){
-        if(CarView.X-110 <= currentxPos() && this.d == Direction.E ){
+        if(CarView.getx()-110 <= currentxPos() && this.d == Direction.E ){
             this.currentSpeed = 0;
             this.d = Direction.W;
             startEngine();
@@ -112,7 +112,7 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
             startEngine();
         }
 
-        if(CarView.Y-70 <= currentxPos() && this.d == Direction.S ){
+        if(CarView.gety()-70 <= currentxPos() && this.d == Direction.S ){
             this.currentSpeed = 0;
             this.d = Direction.N;
             startEngine();

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class CarController {
     // member fields:
-
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private final int delay = 50;
     // The timer is started with a listener (see below) that executes the statements
@@ -38,7 +37,7 @@ public class CarController {
         cc.cars.add(new Scania());
 
         // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
+        cc.frame = new CarView("CarSim 1.0", new ControlPanel(cc, CarView.getx(), CarView.gety()));
 
         // Start the timer
         cc.timer.start();
@@ -110,7 +109,7 @@ public class CarController {
     void raisePlatform() {
         for (Vehicle car : cars) {
             if (car.hasPlatform()) {
-                    ((Scania) car).raiseScania(70);
+                ((Scania) car).raiseScania(70);
                 System.out.println("Platform raised");
             }
         }
