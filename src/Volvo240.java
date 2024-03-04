@@ -6,6 +6,7 @@ public class Volvo240 extends Vehicle{
     public Volvo240() {
         super(Color.black, "Volvo240", 100, 4, 4800, 1700);
         stopEngine();
+        image = readImage(modelName);
     }
 
     @Override

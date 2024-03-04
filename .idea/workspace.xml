@@ -4,30 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba0dac04-22c4-4f9b-aa18-5fbdcd121ef2" name="Changes" comment="lab3 final">
-      <change afterPath="$PROJECT_DIR$/lab1.iml" afterDir="false" />
+    <list default="true" id="ba0dac04-22c4-4f9b-aa18-5fbdcd121ef2" name="Changes" comment="Compiles">
+      <change afterPath="$PROJECT_DIR$/src/VehicleLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/CarController$TimerListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarController$TimerListener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView$9.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/CarView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/ControlPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/ControlPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/DrawPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/Garage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/Garage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/PlatformTransporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/PlatformTransporter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/Saab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/Saab95.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/Scania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/Transporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/Transporter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1/Vehicle$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/Vehicle$Direction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/Vehicle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1/VehicleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/VehicleTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1/lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/lab1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1/Volvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1/Volvo240.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/Saab95.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pics/Saab95.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/Scania.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pics/Scania.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/Volvo240.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pics/Volvo240.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/VolvoBrand.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pics/VolvoBrand.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/placeholder.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Garage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Garage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlatformTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlatformTransporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Saab95.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transporter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VehicleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VehicleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Volvo240.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,26 +110,12 @@
       <recent name="C:\Users\User\IdeaProjects\lab1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Documents\TDA553-DIT954 java-design\lab1" />
       <recent name="C:\Users\User\Documents\TDA553-DIT954 java-design\lab1\src" />
+      <recent name="C:\Users\User\Documents\TDA553-DIT954 java-design\lab1" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="CarController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CarController" />
-      <module name="lab1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.CarController" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -212,7 +217,14 @@
       <option name="presentableId" value="LOCAL−00012" />
       <updated>1708703627163</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL−00013" summary="Compiles">
+      <option name="closed" value="true" />
+      <created>1709309484951</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1709309484951</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,7 +248,8 @@
     <MESSAGE value="lab2 uppgift 3" />
     <MESSAGE value="lab2 uppdaterad" />
     <MESSAGE value="lab3" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab3" />
+    <MESSAGE value="Compiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compiles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

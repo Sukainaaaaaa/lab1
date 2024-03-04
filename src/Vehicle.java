@@ -3,7 +3,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
+
+public abstract class Vehicle implements Movable, Loadable, Turbo, Platform, ImageHandler {
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
@@ -13,8 +14,8 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
     protected double py;
     protected Direction d = Direction.E;
     protected int length; //in mm
-    protected int width; //in mm6
-
+    protected int width; //in mm
+    protected BufferedImage image;
     protected enum Direction {
         N, E, W, S
     }
@@ -62,6 +63,24 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
     public abstract void incrementSpeed(double amount);
     public abstract void decrementSpeed(double amount);
 
+    @Override
+    public BufferedImage readImage(String modelName) {
+        try {
+            return ImageIO.read(Vehicle.class.getResourceAsStream("pics/"+modelName+".jpg"));
+        } catch (IOException ex) {ex.printStackTrace();}
+        return null;
+    }
+
+    @Override
+    public BufferedImage getImage(){
+        return image;
+    }
+
+    @Override
+    public Point getPoint(){
+        return new Point((int)px, (int)py);
+    }
+
     public void gas(double amount) {
         if (amount < 0 || amount > 1) {
             throw new IllegalArgumentException("Gas out of bounds");
@@ -95,35 +114,6 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
                 break;
 
         }
-        bounds();
-
-    }
-
-    public void bounds(){
-        if(CarView.getx()-110 <= currentxPos() && this.d == Direction.E ){
-            this.currentSpeed = 0;
-            this.d = Direction.W;
-            startEngine();
-        }
-
-        if (0 > currentxPos() && this.d == Direction.W ) {
-            this.currentSpeed = 0;
-            this.d = Direction.E;
-            startEngine();
-        }
-
-        if(CarView.gety()-70 <= currentxPos() && this.d == Direction.S ){
-            this.currentSpeed = 0;
-            this.d = Direction.N;
-            startEngine();
-        }
-
-        if(0 > currentxPos() && this.d == Direction.N ){
-            this.currentSpeed = 0;
-            this.d = Direction.S;
-            startEngine();
-        }
-
     }
 
     public void turnLeft() {
@@ -165,7 +155,5 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform{
                 break;
         }
     }
-
-
 
 }

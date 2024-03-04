@@ -8,6 +8,7 @@ public class Scania extends Truck {
         this.angle = 0;
         platform = new PlatformScania();
         stopEngine();
+        image = readImage(modelName);
     }
 
     protected double getAngle() {

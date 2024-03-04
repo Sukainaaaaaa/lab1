@@ -17,7 +17,7 @@ public class VehicleTest {
 
     @Before
     public void SetUp() {
-        volvo240Garage = new Garage<>("VolvoG", 5);
+        volvo240Garage = new Garage<>("VolvoG", 5, 300, 300);
         volvo_test = new Volvo240();
         saab_test = new Saab95();
         scania_test = new Scania();

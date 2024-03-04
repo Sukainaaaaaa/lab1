@@ -13,14 +13,14 @@ public class ControlPanel extends JPanel {
     JLabel gasLabel = new JLabel("Amount of gas");
     JButton gasButton = new JButton("Gas");
     JButton brakeButton = new JButton("Brake");
-    JButton turboOnButton = new JButton("Saab Turbo on");
-    JButton turboOffButton = new JButton("Saab Turbo off");
+    JButton turboOnButton = new JButton("Saab MVC.Model.Turbo on");
+    JButton turboOffButton = new JButton("Saab MVC.Model.Turbo off");
     JButton liftBedButton = new JButton("Raise platform");
     JButton lowerBedButton = new JButton("Lower platform");
     JButton startButton = new JButton("Start all cars");
     JButton stopButton = new JButton("Stop all cars");
 
-    public ControlPanel(CarController carC, int X, int Y) {
+    public ControlPanel(VehicleAction carC, int X, int Y) {
 
         SpinnerModel spinnerModel =
                 new SpinnerNumberModel(0, //initial value
@@ -64,8 +64,6 @@ public class ControlPanel extends JPanel {
         stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
         this.add(stopButton);
 
-        // This actionListener is for the gas button only
-        // TODO: Create more for each component as necessary
         gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

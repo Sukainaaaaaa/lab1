@@ -7,6 +7,7 @@ public class Saab95 extends Vehicle{
         super(Color.red, "Saab95", 125, 2, 5000, 1900);
 	    turboOn = false;
         stopEngine();
+        image = readImage(modelName);
     }
 
     public void setTurboOn(){

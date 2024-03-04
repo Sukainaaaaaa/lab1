@@ -18,6 +18,7 @@ public class Transporter extends Truck{
         vehicleStack = new Stack<>();
         platformtrans = new PlatformTransporter();
         stopEngine();
+        image = readImage(modelName);
     }
 
     protected void lowerTrans(Transporter trans){
