@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class VehicleAction  {
     private final int delay = 50;
@@ -13,19 +14,24 @@ public class VehicleAction  {
 
     public void initializer(){
         VehicleAction cc = new VehicleAction();
+
         Volvo240 v = new Volvo240();
-        v.py = 300;
+        v.setPoint(0,300);
         cc.cars.add(v);
-        Saab95 s = new Saab95();
-        s.py = 200;
-        cc.cars.add(s);
         Scania sa = new Scania();
+        sa.setPoint(0,0);
         cc.cars.add(sa);
+        Saab95 s = new Saab95();
+        s.setPoint(0,200);
+        cc.cars.add(s);
+
+
         cc.frame = new CarView("CarSim 1.0", new ControlPanel(cc, CarView.getx(), CarView.gety()));
         cc.frame.drawPanel.drawable.add(v);
         cc.frame.drawPanel.drawable.add(s);
         cc.frame.drawPanel.drawable.add(sa);
         cc.frame.drawPanel.drawable.add(volvo240Garage);
+
         cc.timer.start();
     }
 
@@ -90,7 +96,7 @@ public class VehicleAction  {
         for (Vehicle car : cars) {
             if (car.hasPlatform()) {
                 ((Scania) car).raiseScania(70);
-                System.out.println("MVC.Model.Platform raised");
+                System.out.println("Platform raised");
             }
         }
     }
@@ -99,8 +105,28 @@ public class VehicleAction  {
         for (Vehicle car : cars) {
             if (car.hasPlatform()) {
                 ((Scania) car).lowerScania(70);
-                System.out.println("MVC.Model.Platform lowered");
+                System.out.println("Platform lowered");
             }
+        }
+    }
+
+    void addCar(){
+        Vehicle randvehicle = vehicleLogic.chooseVehicle(cars);
+        int rPos = vehicleLogic.randPos();
+        randvehicle.setPoint(0,rPos);
+        for (Vehicle car : cars){
+            if (!vehicleLogic.collision(car, randvehicle)){
+                cars.add(randvehicle);
+            }
+            else {addCar();}
+        }
+    }
+
+    void removeCar(){
+        if (!cars.isEmpty()){
+            cars.getFirst().removeImage();
+            cars.removeFirst();
+            frame.drawPanel.repaint();
         }
     }
 

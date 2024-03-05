@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
-public class Garage<T extends Vehicle> implements ImageHandler {
+public class Garage<T extends Vehicle> implements ImageHandler{
     private String name;
     private int maxAmount;
     public List<T> vehicles;
@@ -22,6 +22,7 @@ public class Garage<T extends Vehicle> implements ImageHandler {
         this.px = px;
         this.py = py;
     }
+
     protected void admitVehicle(T car) {
         if ((vehicles.size() < maxAmount)) {
             vehicles.add(car);
@@ -31,6 +32,13 @@ public class Garage<T extends Vehicle> implements ImageHandler {
         vehicles.remove(car);
     }
 
+    public double getpx(){
+        return this.px;
+    }
+
+    public double getpy(){
+        return this.py;
+    }
     @Override
     public BufferedImage readImage(String imagename) {
         try {
@@ -48,4 +56,16 @@ public class Garage<T extends Vehicle> implements ImageHandler {
     public Point getPoint(){
         return new Point((int)px, (int)py);
     }
+
+    @Override
+    public void setPoint(int x, int y) {
+        this.px = x;
+        this.py = y;
+    }
+
+    @Override
+    public void removeImage() {
+        this.image = null;
+    }
+
 }

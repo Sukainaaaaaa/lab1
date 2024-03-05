@@ -6,4 +6,6 @@ public interface ImageHandler {
     BufferedImage readImage(String imagename);
     BufferedImage getImage();
     Point getPoint();
+    void setPoint(int x, int y);
+    void removeImage();
 }

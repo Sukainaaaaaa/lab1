@@ -1,4 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class VehicleLogic {
+    Random rand = new Random();
     static void moveit(int x, int y, Vehicle car){
         if(car.hasTurbo()){
             car.getPoint().x = x;
@@ -43,9 +48,23 @@ public class VehicleLogic {
     }
     
     public void park(Vehicle car, Garage garage) {
-        if ((car.currentxPos() >= 300) && (car.currentyPos() >= 300) && (car.getClass() == Volvo240.class)) {
+        if ((car.currentxPos() >= garage.getpx()) && (car.currentyPos() >= garage.getpy()) && (car.getClass() == Volvo240.class)) {
             car.stopEngine();
             garage.admitVehicle((Volvo240) car);
         }
+    }
+
+    public Vehicle chooseVehicle(ArrayList<Vehicle> cars){
+        int index = rand.nextInt(cars.size()-1);
+        return cars.get(index);
+    }
+
+    public boolean collision(Vehicle car1, Vehicle car2){
+        return car1.getPoint() == car2.getPoint();
+    }
+
+    public int randPos(){
+        int pos = rand.nextInt(CarView.gety()-CarView.getButtondisplayheight()-50);
+        return pos;
     }
 }

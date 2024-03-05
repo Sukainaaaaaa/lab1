@@ -4,9 +4,11 @@ import java.awt.*;
 public class CarView extends JFrame{
     private static final int X = 800;
     private static final int Y = 800;
+    private static final int buttondisplayheight = 240;
     public static int getx(){return X;}
     public static int gety(){return Y;}
-    DrawPanel drawPanel = new DrawPanel(X, Y-240);
+    public static int getButtondisplayheight(){ return buttondisplayheight;}
+    DrawPanel drawPanel = new DrawPanel(X, Y-buttondisplayheight);
     ControlPanel controlPanel;
 
     public CarView(String framename, ControlPanel cc){

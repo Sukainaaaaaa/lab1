@@ -2,9 +2,11 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 
-public abstract class Vehicle implements Movable, Loadable, Turbo, Platform, ImageHandler {
+public abstract class Vehicle implements Movable, Loadable, Turbo, Platform, ImageHandler{
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
@@ -81,11 +83,23 @@ public abstract class Vehicle implements Movable, Loadable, Turbo, Platform, Ima
         return new Point((int)px, (int)py);
     }
 
+    @Override
+    public void setPoint(int x, int y){
+        this.px = x;
+        this.py = y;
+    }
+
+    @Override
+    public void removeImage(){
+        this.image = null;
+    }
+
     public void gas(double amount) {
         if (amount < 0 || amount > 1) {
             throw new IllegalArgumentException("Gas out of bounds");
         }
         if(currentSpeed > 0){ incrementSpeed(amount);}
+
     }
 
     public void brake(double amount) {

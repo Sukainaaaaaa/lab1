@@ -11,10 +11,14 @@ public class ControlPanel extends JPanel {
     JSpinner gasSpinner = new JSpinner();
     int gasAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
+
+    JButton addCarButton = new JButton("Add car");
+
+    JButton removeCarButton = new JButton("Remove car");
     JButton gasButton = new JButton("Gas");
     JButton brakeButton = new JButton("Brake");
-    JButton turboOnButton = new JButton("Saab MVC.Model.Turbo on");
-    JButton turboOffButton = new JButton("Saab MVC.Model.Turbo off");
+    JButton turboOnButton = new JButton("Turbo on");
+    JButton turboOffButton = new JButton("Turbo off");
     JButton liftBedButton = new JButton("Raise platform");
     JButton lowerBedButton = new JButton("Lower platform");
     JButton startButton = new JButton("Start all cars");
@@ -48,6 +52,8 @@ public class ControlPanel extends JPanel {
         controlPanel.add(brakeButton, 3);
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
+        controlPanel.add(addCarButton,6 );
+        controlPanel.add(removeCarButton,7 );
         controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200));
         this.add(controlPanel);
         controlPanel.setBackground(Color.black);
@@ -117,6 +123,20 @@ public class ControlPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 carC.lowerPlatform();
+            }
+        });
+
+        addCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.addCar();
+            }
+        });
+
+        removeCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.removeCar();
             }
         });
     }
